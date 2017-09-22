@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/WEB-INF/include/template.xhtml">
+        <ui:define name="head">
+            <title>All Transactions</title>
+        </ui:define>
+
+
+        <ui:define name="body">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>View all transactions here</h1>
+                    </div>
+                </div>
+
+
+
+                <!--Data Table-->
+                <div class="row">
+
+                    <div class="col-lg-8 col-lg-offset-2">
+
+
+
+                        <h:form>
+                            <div class="form-group col-lg-8 col-lg-offset-7">
+
+
+                                <h:inputText value="#{transactionController.searchString}" styleClass="form-group"></h:inputText>
+
+                                <h:commandButton value="Search" action="#{transactionController.searchFilter()}" styleClass="btn btn-default btn-sm"></h:commandButton>
+                                <h:commandButton value="View All" actionListener="#{transactionController.getAll()}" styleClass="btn btn-default btn-sm"></h:commandButton>
+                            </div>
+
+
+
+                            <h:dataTable var="T" value="#{transactionController.findAll()}" styleClass="table table-bordered table-hover" >
+
+                                <h:column>
+                                    <f:facet name ="header">Transaction Number</f:facet>
+
+                                    <h:outputText value="#{T.transactionNumber}"></h:outputText>
+
+                                </h:column>
+
+
+                                <h:column>
+                                    <f:facet name ="header">Transaction Name</f:facet>
+                                    <h:commandLink value="#{T.transactionName}" action="#{transactionController.transactionSelected(T.transactionNumber)}"></h:commandLink>
+                                </h:column>
+
+                            </h:dataTable>
+                        </h:form>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div><!-- /.container -->
+        </ui:define>
+    </ui:composition>
+</html>
+

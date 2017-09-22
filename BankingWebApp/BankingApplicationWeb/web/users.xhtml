@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+    <ui:composition template="/WEB-INF/include/template.xhtml">
+
+        <ui:define name="head">
+            <title>Users</title>
+            <h:outputStylesheet name="css/starter-template.css"/>
+        </ui:define>
+
+
+
+        <ui:define name="body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>View all users here</h1>
+                        <p><h:link value="Create User" outcome="selectionPage.xhtml"></h:link></p>
+                    </div>
+                </div>
+                
+                <!--Data Table-->
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h:dataTable var="U" value="#{userController.findAll()}" styleClass="table table-bordered table-hover" >
+                            
+                            <h:column>
+                                <f:facet name="header">User ID</f:facet>
+                                <h:outputText value="#{U.userID}"></h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                <h:outputText value="#{U.firstName}"></h:outputText>              
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">Last Name</f:facet>
+                                <h:outputText value="#{U.lastName}"></h:outputText>
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">Email</f:facet>
+                                <h:outputFormat value="#{U.emailAddress.toString()}"></h:outputFormat>
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header">Action</f:facet>
+                            </h:column>
+                                
+                            
+                        </h:dataTable>
+                        
+                        
+                    </div>
+                    
+                </div>
+                    
+
+
+            </div>
+
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
