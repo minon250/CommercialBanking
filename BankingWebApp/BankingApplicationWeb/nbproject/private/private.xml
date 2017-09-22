@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/index.xhtml</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/transactions.xhtml</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/selectionPage.xhtml</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/users.xhtml</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/src/java/bankingApp/controller/UserController.java</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/addBankUser.xhtml</file>
-            <file>file:/Users/minon/Desktop/PortfolioTasks/BankingWebApp/BankingApplicationWeb/web/addPublicUser.xhtml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
